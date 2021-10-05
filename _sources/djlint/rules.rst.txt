@@ -19,7 +19,7 @@ Codes
 +--------+-------------------------------------------------------------------------+
 | H005   | Html tag should have lang attribute.                                    |
 +--------+-------------------------------------------------------------------------+
-| H006   | Img tag should have alt, height and width attributes.                   |
+| H006   | Img tag should have height and width attributes.                        |
 +--------+-------------------------------------------------------------------------+
 | H007   | <!DOCTYPE ... > should be present before the html tag.                  |
 +--------+-------------------------------------------------------------------------+
@@ -32,6 +32,8 @@ Codes
 | H011   | Attribute values should be quoted.                                      |
 +--------+-------------------------------------------------------------------------+
 | H012   | There should be no spaces around attribute =.                           |
++--------+-------------------------------------------------------------------------+
+| H013   | Img tag should have alt attributes.                                     |
 +--------+-------------------------------------------------------------------------+
 | H014   | More than 2 blank lines.                                                |
 +--------+-------------------------------------------------------------------------+
@@ -71,3 +73,19 @@ The first letter of a code follows the pattern:
 - J: applies specifically to Jinja
 - N: applies specifically to Nunjucks
 - M: applies specifically to Handlebars
+
+Custom Rules
+~~~~~~~~~~~~
+
+Create a file ``.djlint_rules.yaml`` alongside your ``pyproject.toml``. Rules can be added to this files and djLint will pick them up.
+
+A good rule follows this pattern:
+
+.. code:: yaml
+
+    - rule:
+        name: T001
+        message: Find Trichotillomania
+        flags: re.DOTALL|re.I
+        patterns:
+        - Trichotillomania
