@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Configuration &#8212; djlint 0.5.7 documentation</title>
+    <title>Configuration &#8212; djlint 0.5.8 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -173,6 +173,41 @@
 </ul>
 <p>Usage:</p>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">profile</span><span class="o">=</span><span class="s">&quot;django&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="require-pragma">
+<h2>require_pragma<a class="headerlink" href="#require-pragma" title="Permalink to this headline">¶</a></h2>
+<p>Only format or lint files that starts with a comment with only the text ‘djlint:on’. The comment can be a HTML comment or a comment in the template language defined by the profile setting. If no profile is specified, a comment in any of the template languages is accepted.</p>
+<p>Usage:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">require_pragma</span> <span class="o">=</span> <span class="s">true</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- djlint:on --&gt;</span>
+or
+{# djlint:on #}
+or
+{% comment %} djlint:on {% endcomment %}
+or
+{{ /* djlint:on */ }}
+or
+{{!-- djlint:on --}}
+</pre></div>
+</div>
+</section>
+<section id="max-line-length">
+<h2>max_line_length<a class="headerlink" href="#max-line-length" title="Permalink to this headline">¶</a></h2>
+<p>Formatter will attempt to put some html and template tags on a single line instead of wrapping them if the line length will not exceed this value.</p>
+<p>Usage:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">max_line_length</span><span class="o">=</span><span class="s">120</span>
+</pre></div>
+</div>
+</section>
+<section id="max-attribute-length">
+<h2>max_attribute_length<a class="headerlink" href="#max-attribute-length" title="Permalink to this headline">¶</a></h2>
+<p>Formatter will attempt to wrap tag attributes if the attribute length exceeds this value.</p>
+<p>Usage:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">max_attribute_length</span><span class="o">=</span><span class="s">10</span>
 </pre></div>
 </div>
 </section>
