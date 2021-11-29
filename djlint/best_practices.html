@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Best Practices &#8212; djlint 0.6.6 documentation</title>
+    <title>Best Practices &#8212; djlint 0.6.7 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -113,9 +113,9 @@
 </pre></div>
 </div>
 </section>
-<section id="spaceless-conditional-attributes">
-<h2>Spaceless Conditional Attributes<a class="headerlink" href="#spaceless-conditional-attributes" title="Permalink to this headline">¶</a></h2>
-<p>Conditional attributes should use spaceless tags, for example <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">a</span> <span class="pre">-%}</span></code> in nunjuck and jinja, to remove spaces inside the.</p>
+<section id="format-attribute-template-tags-and-spaceless-conditional-attributes">
+<h2><code class="docutils literal notranslate"><span class="pre">format_attribute_template_tags</span></code> and Spaceless Conditional Attributes<a class="headerlink" href="#format-attribute-template-tags-and-spaceless-conditional-attributes" title="Permalink to this headline">¶</a></h2>
+<p>If <code class="docutils literal notranslate"><span class="pre">format_attribute_template_tags</span></code> option is enabled, conditional attributes should use spaceless tags, for example <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">a</span> <span class="pre">-%}</span></code> in nunjuck and jinja, or <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">spaceless</span> <span class="pre">%}{%</span> <span class="pre">if</span> <span class="pre">a</span> <span class="pre">%}{%</span> <span class="pre">endspaceless</span> <span class="pre">%}</span></code> in django, to remove spaces inside the.</p>
 <p>djLint will format long attributes onto multiple lines, and the whitespace saved inside of attributes could break your code.</p>
 <p>This pattern is recommended:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{% if database -%}{{ database.name }}{%- else -%}blah{%- endif %}&quot;</span><span class="p">/&gt;</span>

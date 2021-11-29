@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Configuration &#8212; djlint 0.6.6 documentation</title>
+    <title>Configuration &#8212; djlint 0.6.7 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -216,6 +216,37 @@ or
 <p>Add .gitignore excludes to the default exclude.</p>
 <p>Usage:</p>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">use_gitignore</span> <span class="o">=</span> <span class="s">True</span>
+</pre></div>
+</div>
+</section>
+<section id="format-attribute-template-tags">
+<h2>format_attribute_template_tags<a class="headerlink" href="#format-attribute-template-tags" title="Permalink to this headline">¶</a></h2>
+<p>Formatter will attempt to format template syntax inside of tag attributes. Disabled by default.</p>
+<p>Usage:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">format_attribute_template_tags</span><span class="o">=</span><span class="s">true</span>
+</pre></div>
+</div>
+<p>For example, with this option enabled, the following html will be acceptable:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;{% if this %}</span>
+<span class="s">                  then something neat</span>
+<span class="s">              {% else %}</span>
+<span class="s">                  that is long stuff asdf and more even</span>
+<span class="s">              {% endif %}&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="linter-output-format">
+<h2>linter_output_format<a class="headerlink" href="#linter-output-format" title="Permalink to this headline">¶</a></h2>
+<p>Customize order of output message. Default=”{code} {line} {message} {match}”. If <code class="docutils literal notranslate"><span class="pre">{filename}</span></code> is not include in message, then the output will be grouped by file and a header will automatically be added to each group.</p>
+<p>Usage:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># optional variables:</span>
+<span class="c1">#   {filename}</span>
+<span class="c1">#   {line}</span>
+<span class="c1">#   {code}</span>
+<span class="c1">#   {message}</span>
+<span class="c1">#   {match}</span>
+
+<span class="na">linter_output_format</span><span class="o">=</span><span class="s">&quot;{filename}:{line}: {code} {message} {match}&quot;</span>
 </pre></div>
 </div>
 </section>
