@@ -5,6 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="djLint » Best Practices" lang="en" name="title" xml:lang="en" />
+<meta content="Best practices for using djLint to format HTML templates." lang="en" name="description" xml:lang="en" />
+<meta content="template linter, template formatter, djLint, HTML, templates, formatter, linter, best practices" lang="en" name="keywords" xml:lang="en" />
 
     <title>Best Practices &#8212; djlint 0.6.7 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -16,6 +19,7 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <link rel="canonical" href="https://djlint.com/docs/best_practices.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Changelog" href="changelog.html" />
@@ -57,17 +61,18 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rules.html">Linter Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="formatter.html">Formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linter_rules.html">Linter Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatter.html">Formatter Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Best Practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrations.html">Integrations</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/Riverside-Healthcare/djlint">GitHub ↪</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/djlint/">PyPI ↪</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://discord.gg/taghAqebzU">Discord ↪</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://discord.gg/taghAqebzU">Chat ↪</a></li>
 </ul>
 
 <div class="relations">
@@ -115,7 +120,7 @@
 </section>
 <section id="format-attribute-template-tags-and-spaceless-conditional-attributes">
 <h2><code class="docutils literal notranslate"><span class="pre">format_attribute_template_tags</span></code> and Spaceless Conditional Attributes<a class="headerlink" href="#format-attribute-template-tags-and-spaceless-conditional-attributes" title="Permalink to this headline">¶</a></h2>
-<p>If <code class="docutils literal notranslate"><span class="pre">format_attribute_template_tags</span></code> option is enabled, conditional attributes should use spaceless tags, for example <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">a</span> <span class="pre">-%}</span></code> in nunjuck and jinja, or <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">spaceless</span> <span class="pre">%}{%</span> <span class="pre">if</span> <span class="pre">a</span> <span class="pre">%}{%</span> <span class="pre">endspaceless</span> <span class="pre">%}</span></code> in django, to remove spaces inside the.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">format_attribute_template_tags</span></code> option is enabled, conditional attributes should use spaceless tags, for example <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">a</span> <span class="pre">-%}</span></code> in nunjuck and jinja, to remove spaces inside the.</p>
 <p>djLint will format long attributes onto multiple lines, and the whitespace saved inside of attributes could break your code.</p>
 <p>This pattern is recommended:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{% if database -%}{{ database.name }}{%- else -%}blah{%- endif %}&quot;</span><span class="p">/&gt;</span>
@@ -148,7 +153,7 @@
       &copy;2021, Riverside Healthcare.
       
       |
-      <a href="../_sources/djlint/best_practices.rst.txt"
+      <a href="../_sources/docs/best_practices.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

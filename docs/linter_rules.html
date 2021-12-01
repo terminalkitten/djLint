@@ -5,6 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="djLint » Linter Rules" lang="en" name="title" xml:lang="en" />
+<meta content="djLint HTML Template linter includes over 30 rules! Find the definitions here. Easily expand with include custom rules!" lang="en" name="description" xml:lang="en" />
+<meta content="template linter, template formatter, djLint, HTML, templates, formatter, linter, rules" lang="en" name="keywords" xml:lang="en" />
 
     <title>Linter Rules &#8212; djlint 0.6.7 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -16,10 +19,11 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <link rel="canonical" href="https://djlint.com/docs/linter_rules.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Formatter" href="formatter.html" />
-    <link rel="prev" title="Getting Started" href="usage.html" />
+    <link rel="next" title="Formatter Usage" href="formatter.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -57,25 +61,26 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Linter Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="formatter.html">Formatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatter.html">Formatter Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="best_practices.html">Best Practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrations.html">Integrations</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/Riverside-Healthcare/djlint">GitHub ↪</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/djlint/">PyPI ↪</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://discord.gg/taghAqebzU">Discord ↪</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://discord.gg/taghAqebzU">Chat ↪</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="usage.html" title="previous chapter">Getting Started</a></li>
-      <li>Next: <a href="formatter.html" title="next chapter">Formatter</a></li>
+      <li>Previous: <a href="getting_started.html" title="previous chapter">Getting Started</a></li>
+      <li>Next: <a href="formatter.html" title="next chapter">Formatter Usage</a></li>
   </ul></li>
 </ul>
 </div>
@@ -113,28 +118,28 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>T001</p></td>
-<td><p>Variables should be wrapped in a single whitespace. Ex: {{ this }}</p></td>
+<td><p>Variables should be wrapped in a single whitespace. Ex: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">this</span> <span class="pre">}}</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>T002</p></td>
-<td><p>Double quotes should be used in tags. Ex {% extends “this.html” %}</p></td>
+<td><p>Double quotes should be used in tags. Ex <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">extends</span> <span class="pre">&quot;this.html&quot;</span> <span class="pre">%}</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>T003</p></td>
-<td><p>Endblock should have name. Ex: {% endblock body %}.</p></td>
+<td><p>Endblock should have name. Ex: <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">endblock</span> <span class="pre">body</span> <span class="pre">%}</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>D004</p></td>
-<td><p>(Django) Static urls should follow {% static path/to/file %} pattern.</p></td>
+<td><p>(Django) Static urls should follow <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">static</span> <span class="pre">path/to/file</span> <span class="pre">%}</span></code> pattern.</p></td>
 </tr>
 <tr class="row-even"><td><p>J004</p></td>
-<td><p>(Jinja) Static urls should follow {{ url_for(‘static’..) }} pattern.</p></td>
+<td><p>(Jinja) Static urls should follow <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">url_for('static'..)</span> <span class="pre">}}</span></code> pattern.</p></td>
 </tr>
 <tr class="row-odd"><td><p>H005</p></td>
-<td><p>Html tag should have lang attribute.</p></td>
+<td><p>Html tag should have <code class="docutils literal notranslate"><span class="pre">lang</span></code> attribute.</p></td>
 </tr>
 <tr class="row-even"><td><p>H006</p></td>
-<td><p>Img tag should have height and width attributes.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">img</span></code> tag should have <code class="docutils literal notranslate"><span class="pre">height</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code> attributes.</p></td>
 </tr>
 <tr class="row-odd"><td><p>H007</p></td>
-<td><p>&lt;!DOCTYPE … &gt; should be present before the html tag.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;!DOCTYPE</span> <span class="pre">...</span> <span class="pre">&gt;</span></code> should be present before the html tag.</p></td>
 </tr>
 <tr class="row-even"><td><p>H008</p></td>
 <td><p>Attributes should be double quoted.</p></td>
@@ -149,31 +154,31 @@
 <td><p>Attribute values should be quoted.</p></td>
 </tr>
 <tr class="row-even"><td><p>H012</p></td>
-<td><p>There should be no spaces around attribute =.</p></td>
+<td><p>There should be no spaces around attribute <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>H013</p></td>
-<td><p>Img tag should have alt attributes.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">img</span></code> tag should have alt attributes.</p></td>
 </tr>
 <tr class="row-even"><td><p>H014</p></td>
 <td><p>More than 2 blank lines.</p></td>
 </tr>
 <tr class="row-odd"><td><p>H015</p></td>
-<td><p>Follow h tags with a line break.</p></td>
+<td><p>Follow <code class="docutils literal notranslate"><span class="pre">h</span></code> tags with a line break.</p></td>
 </tr>
 <tr class="row-even"><td><p>H016</p></td>
-<td><p>Missing title tag in html.</p></td>
+<td><p>Missing <code class="docutils literal notranslate"><span class="pre">title</span></code> tag in html.</p></td>
 </tr>
 <tr class="row-odd"><td><p>H017</p></td>
 <td><p>Tag should be self closing.</p></td>
 </tr>
 <tr class="row-even"><td><p>D018</p></td>
-<td><p>(Django) Internal links should use the {% url … %} pattern.</p></td>
+<td><p>(Django) Internal links should use the <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">url</span> <span class="pre">...</span> <span class="pre">%}</span></code> pattern.</p></td>
 </tr>
 <tr class="row-odd"><td><p>J018</p></td>
-<td><p>(Jinja) Internal links should use the {% url … %} pattern.</p></td>
+<td><p>(Jinja) Internal links should use the <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">url</span> <span class="pre">...</span> <span class="pre">%}</span></code> pattern.</p></td>
 </tr>
 <tr class="row-even"><td><p>H019</p></td>
-<td><p>Replace ‘javascript:abc()’ with <a href="#id1"><span class="problematic" id="id2">on_</span></a> event and real url.</p></td>
+<td><p>Replace <code class="docutils literal notranslate"><span class="pre">javascript:abc()</span></code> with <code class="docutils literal notranslate"><span class="pre">on_</span></code> event and real url.</p></td>
 </tr>
 <tr class="row-odd"><td><p>H020</p></td>
 <td><p>Empty tag pair found. Consider removing.</p></td>
@@ -200,7 +205,7 @@
 <td><p>Unclosed string found in template syntax.</p></td>
 </tr>
 <tr class="row-odd"><td><p>T028</p></td>
-<td><p>Consider using spaceless tags inside attribute values. {%- if/for -%}</p></td>
+<td><p>Consider using spaceless tags inside attribute values. <code class="docutils literal notranslate"><span class="pre">{%-</span> <span class="pre">if/for</span> <span class="pre">-%}</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>H029</p></td>
 <td><p>Consider using lowercase form method values.</p></td>
@@ -264,7 +269,7 @@
       &copy;2021, Riverside Healthcare.
       
       |
-      <a href="../_sources/djlint/rules.rst.txt"
+      <a href="../_sources/docs/linter_rules.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
